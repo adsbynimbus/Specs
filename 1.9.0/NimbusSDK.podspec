@@ -96,8 +96,8 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'NimbusKit' do |ss|
-    ss.preserve_paths      = '**/NimbusAll/xcframeworks/NimbusKit.xcframework'
-    ss.vendored_frameworks = '**/NimbusAll/xcframeworks/NimbusKit.xcframework'
+    ss.preserve_paths      = '**/NimbusKit.xcframework'
+    ss.vendored_frameworks = '**/NimbusKit.xcframework'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
     ss.dependency 'NimbusSDK/NimbusRequestKit'
