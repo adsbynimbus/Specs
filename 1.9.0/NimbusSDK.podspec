@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
     ss.vendored_frameworks = '**/NimbusRenderVideoKit.xcframework'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
-    ss.dependency 'GoogleMobileAds', '7.66.0'
+    ss.dependency 'GoogleMobileAds', '7.6.0'
   end
 
   spec.subspec 'NimbusRenderFANKit' do |ss|
@@ -118,7 +118,7 @@ Pod::Spec.new do |spec|
     ss.dependency 'NimbusSDK/NimbusKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
     ss.dependency 'NimbusSDK/NimbusRequestKit'
-    ss.dependency 'GoogleMobileAds', '7.66.0'
+    ss.dependency 'GoogleMobileAds', '7.6.0'
     ss.dependency 'GoogleUtilities', '7.3.1'
     ss.dependency 'nanopb', '2.30907.0'
     ss.dependency 'PromisesObjC', '1.2.12'
