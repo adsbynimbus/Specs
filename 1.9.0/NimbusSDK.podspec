@@ -1,59 +1,39 @@
-#
-#  Be sure to run `pod spec lint NimbusCoreKit.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
 Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
 
-  spec.name         = "NimbusSDK"
-  spec.version      = "1.9.0"
-  spec.summary      = "NimbusSDK"
+  spec.name         = 'NimbusSDK'
+  spec.version      = '1.9.0'
+  spec.summary      = 'The Nimbus SDK is the easiest and fastest way to start using Nimbus.'
 
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-                    NimbusSDK is a core dependency of Nimbus iOS SDK that includes common structs and logging.
+                    The Nimbus SDK is the easiest and fastest way to start using Nimbus.
+                    Instead of installing multiple SDKs from each of your demand partners, the Nimbus SDK gives you access
+                    to all of your demand with a single integration — saving you engineering time and keeping your app fast and lightweight.
+                    Think of it as “one SDK to replace them all.”
                    DESC
 
-  spec.homepage     = "https://www.adsbynimbus.com"
-  spec.author       = { "Inder Dhir" => "inderdhir03@gmail.com" }
-  spec.platform     = :ios, "10.0"
-  spec.documentation_url = "https://adsbynimbus-public.s3.amazonaws.com/iOS/docs/1.9.0/docs/index.html"
-  spec.license = { :type => "Copyright", :text => "Nimbus. All rights reserved." }
+  spec.homepage          = 'https://www.adsbynimbus.com'
+  spec.social_media_url  = 'https://twitter.com/adsbynimbus'
+  spec.author            = 'Nimbus'
+  spec.platform          = :ios, '10.0'
+  spec.documentation_url = 'https://adsbynimbus-public.s3.amazonaws.com/iOS/docs/1.9.0/docs/index.html'
+  spec.license           = { :type => 'Copyright', :text => 'Nimbus. All rights reserved.' }
+
+  spec.swift_version         = '5.0'
+  spec.ios.deployment_target = '10.0'
+
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
 
-  spec.source       = {
-    :http => "https://adsbynimbus-public.s3.amazonaws.com/iOS/sdks/1.9.0/Nimbus-1.9.0.zip",
-    :sha256 => "d2a778ce63b819c037a58806b539cfb6de5a5c884ebe216ad8cc44bf2b385eed"
+  spec.source = {
+    :http => 'https://adsbynimbus-public.s3.amazonaws.com/iOS/sdks/1.9.0/Nimbus-1.9.0.zip',
+    :sha256 => 'd2a778ce63b819c037a58806b539cfb6de5a5c884ebe216ad8cc44bf2b385eed'
   }
-  # spec.vendored_frameworks = '**/NimbusAll/xcframeworks/NimbusCoreKit.xcframework'
-  spec.swift_version = '5.0'
 
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
+
+  # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+
   spec.default_subspecs = 'NimbusRenderKit'
 
   spec.subspec 'NimbusCoreKit' do |ss|
