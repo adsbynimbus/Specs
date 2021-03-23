@@ -112,8 +112,8 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'NimbusGAMKit' do |ss|
-    ss.preserve_paths      = '**/NimbusGAM/NimbusGAMKit.xcframework'
-    ss.vendored_frameworks = '**/NimbusGAM/NimbusGAMKit.xcframework'
+    ss.preserve_paths = '**/NimbusGAM/NimbusGAMKit/**/*'
+    ss.source_files   = '**/NimbusGAM/NimbusGAMKit/**/*'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
