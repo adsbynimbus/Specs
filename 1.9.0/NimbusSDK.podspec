@@ -4,13 +4,14 @@ Pod::Spec.new do |spec|
 
   spec.name         = 'NimbusSDK'
   spec.version      = '1.9.0'
-  spec.summary      = 'The Nimbus SDK is the easiest and fastest way to start using Nimbus.'
+  spec.summary      = 'The Nimbus SDK is the easiest and fastest way to start using Nimbus on iOS.'
 
   spec.description  = <<-DESC
-                    The Nimbus SDK is the easiest and fastest way to start using Nimbus.
-                    Instead of installing multiple SDKs from each of your demand partners, the Nimbus SDK gives you access
-                    to all of your demand with a single integration — saving you engineering time and keeping your app fast and lightweight.
-                    Think of it as “one SDK to replace them all.”
+                    Nimbus is a disruptive new mobile ad platform that combines an ultra low-latency server-to-server publisher
+                    exchange with a flexible, lightweight client-side SDK. With one call to our platform, you get
+                    access to a pool of bidders who compete for your impression on a first-price auction, so you
+                    get the highest CPMs available, right from the source. Nimbus is designed to do two things well:
+                    maximize your revenue and deliver a polished mobile advertising experience to your users.
                    DESC
 
   spec.homepage          = 'https://www.adsbynimbus.com'
