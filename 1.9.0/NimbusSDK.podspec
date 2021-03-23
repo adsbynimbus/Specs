@@ -61,8 +61,7 @@ Pod::Spec.new do |spec|
     ss.vendored_frameworks = '**/NimbusFAN/NimbusRequestFANKit.xcframework'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusRequestKit'
-    ss.dependency 'FBAudienceNetwork', '6.3.0'
-    ss.dependency 'FBSDKCoreKit', '9.1.0'
+    ss.dependency 'FBAudienceNetwork', '6.2.1'
   end
 
   spec.subspec 'NimbusRenderKit' do |ss|
@@ -83,7 +82,7 @@ Pod::Spec.new do |spec|
     ss.vendored_frameworks = '**/NimbusRenderVideoKit.xcframework'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
-    ss.dependency 'GoogleAds-IMA-iOS-SDK', '3.14.1'
+    ss.dependency 'GoogleAds-IMA-iOS-SDK', '3.13.0'
   end
 
   spec.subspec 'NimbusRenderFANKit' do |ss|
@@ -91,8 +90,7 @@ Pod::Spec.new do |spec|
     ss.vendored_frameworks = '**/NimbusFAN/NimbusRenderFANKit.xcframework'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
-    ss.dependency 'FBAudienceNetwork', '6.3.0'
-    ss.dependency 'FBSDKCoreKit', '9.1.0'
+    ss.dependency 'FBAudienceNetwork', '6.2.1'
   end
 
   spec.subspec 'NimbusKit' do |ss|
