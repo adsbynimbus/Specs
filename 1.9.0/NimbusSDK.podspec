@@ -112,13 +112,12 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'NimbusGAMKit' do |ss|
-    ss.static_framework = true
     ss.source_files   = '**/NimbusGAM/**/*'
     ss.dependency 'NimbusSDK/NimbusCoreKit'
     ss.dependency 'NimbusSDK/NimbusKit'
     ss.dependency 'NimbusSDK/NimbusRenderKit'
     ss.dependency 'NimbusSDK/NimbusRequestKit'
-    ss.dependency 'GoogleMobileAds', '7.6.0'
+    # ss.dependency 'GoogleMobileAds', '7.6.0'
     # ss.dependency 'Google-Mobile-Ads-SDK', '8.2.0.1'
     ss.dependency 'GoogleUtilities', '7.3.1'
     ss.dependency 'nanopb', '2.30907.0'
