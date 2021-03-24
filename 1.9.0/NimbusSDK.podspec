@@ -118,7 +118,7 @@ Pod::Spec.new do |spec|
     ss.dependency 'NimbusSDK/NimbusRenderKit'
     ss.dependency 'NimbusSDK/NimbusRequestKit'
     # ss.dependency 'GoogleMobileAds', '7.6.0'
-    ss.dependency 'Google-Mobile-Ads-SDK', '8.2.0.1'
+    # ss.dependency 'Google-Mobile-Ads-SDK', '8.2.0.1'
     ss.dependency 'GoogleUtilities', '7.3.1'
     ss.dependency 'nanopb', '2.30907.0'
     ss.dependency 'PromisesObjC', '1.2.12'
