@@ -28,8 +28,8 @@ Pod::Spec.new do |spec|
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   spec.source = {
-    :git => 'git@github.com:timehop/nimbus-ios.git',
-    :tag => spec.version
+    :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/Nimbus-1.10.0.zip',
+    :sha256 => 'a2dffd906147c3248a5fa740cd65ab545e28390f8e11e9eb0e6be4db7118be87'
   }
 
   # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
