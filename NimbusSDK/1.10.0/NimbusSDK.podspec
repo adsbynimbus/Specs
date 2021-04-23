@@ -94,4 +94,13 @@ Pod::Spec.new do |spec|
     ss.dependency 'NimbusSDK/NimbusRenderKit'
   end
 
+  spec.subspec 'NimbusGAMKit' do |ss|
+    ss.source_files   = 'NimbusGAM/NimbusGAMKit/**/*'
+    ss.dependency 'NimbusSDK/NimbusCoreKit'
+    ss.dependency 'NimbusSDK/NimbusKit'
+    ss.dependency 'Google-Mobile-Ads-SDK', '8.3.0'
+    ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' } # Google-Mobile-Ads-SDK Removed i386 architecture support on v8.0.0.
+    ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' } # Google-Mobile-Ads-SDK Removed i386 architecture support on v8.0.0.
+  end
+
 end
