@@ -98,16 +98,14 @@ Pod::Spec.new do |spec|
     ss.source_files   = 'NimbusGAM/NimbusGAMKit/**/*'
     ss.dependency 'NimbusSDK/NimbusKit'
     ss.dependency 'Google-Mobile-Ads-SDK', '8.3.0'
-    ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' } # Google-Mobile-Ads-SDK Removed i386 architecture support on v8.0.0.
-    ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' } # Google-Mobile-Ads-SDK Removed i386 architecture support on v8.0.0.
+    ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+    ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   end
 
   spec.subspec 'NimbusMopubKit' do |ss|
     ss.source_files = 'NimbusMopub/NimbusMopubKit/**/*'
     ss.dependency 'NimbusSDK/NimbusKit'
     ss.dependency 'mopub-ios-sdk', '5.16.2'
-    # Mopub doesn't support arm64 arch for simulators - https://github.com/mopub/mopub-ios-sdk/issues/367
-    # We are using the same config from Mopub - https://github.com/mopub/mopub-ios-sdk/blob/master/mopub-ios-sdk.podspec
     ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 arm64e armv7 armv7s', 'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'i386 x86_64' }
     ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 arm64e armv7 armv7s', 'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'i386 x86_64' }
   end
