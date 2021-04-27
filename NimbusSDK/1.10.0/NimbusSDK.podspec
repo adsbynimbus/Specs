@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
 
   spec.source = {
     :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/Nimbus-1.10.0.zip',
-    :sha256 => '421289b56ca06d3252ca247363f4947061c5be6af112e736d1b340a4dd3f18c2'
+    :sha256 => '8b6f213b03411d51bbc6addd03568f7e0320ee4f9b530585ae3c8d1490161068'
   }
 
   # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -98,8 +98,16 @@ Pod::Spec.new do |spec|
     ss.source_files   = 'NimbusGAM/NimbusGAMKit/**/*'
     ss.dependency 'NimbusSDK/NimbusKit'
     ss.dependency 'Google-Mobile-Ads-SDK', '8.3.0'
-    ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' } # Google-Mobile-Ads-SDK Removed i386 architecture support on v8.0.0.
-    ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' } # Google-Mobile-Ads-SDK Removed i386 architecture support on v8.0.0.
+    ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+    ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  end
+
+  spec.subspec 'NimbusMopubKit' do |ss|
+    ss.source_files = 'NimbusMopub/NimbusMopubKit/**/*'
+    ss.dependency 'NimbusSDK/NimbusKit'
+    ss.dependency 'mopub-ios-sdk', '5.16.2'
+    ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 arm64e armv7 armv7s', 'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'i386 x86_64' }
+    ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 arm64e armv7 armv7s', 'EXCLUDED_ARCHS[sdk=iphoneos*]' => 'i386 x86_64' }
   end
 
 end
