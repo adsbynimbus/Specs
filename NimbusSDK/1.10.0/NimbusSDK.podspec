@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
 
   spec.source = {
     :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/Nimbus-1.10.0.zip',
-    :sha256 => 'f318c4502c8f9027889fd82941fc67708b915e9ccdaf487535d8284363774ef7'
+    :sha256 => 'df8615a1d5c7455350635e3399257b7a5efb3ced0fe862411b132f1c4e7489e8'
   }
 
   # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -48,7 +48,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'NimbusRequestAPSKit' do |ss|
     ss.vendored_frameworks = 'NimbusRequestAPSKit.xcframework'
     ss.dependency 'NimbusSDK/NimbusRequestKit'
-    ss.dependency 'AmazonPublisherServicesSDK', '3.4.5'
+    ss.dependency 'AmazonPublisherServicesSDK', '3.4.6'
     ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   end
