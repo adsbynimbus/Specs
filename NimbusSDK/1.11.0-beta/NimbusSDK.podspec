@@ -54,6 +54,8 @@ Pod::Spec.new do |spec|
       ss.source_files = 'NimbusFAN/NimbusRequestFANKit/**/*'
       ss.dependency 'NimbusSDK/NimbusRequestKit'
       ss.dependency 'FBAudienceNetwork', '6.6.0'
+      ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+      ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     end
 
     spec.subspec 'NimbusRenderKit' do |ss|
