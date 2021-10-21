@@ -61,6 +61,11 @@ Pod::Spec.new do |spec|
       ss.dependency 'NimbusSDK/NimbusCoreKit'
     end
 
+    spec.subspec 'NimbusRenderOMKit' do |ss|
+      ss.vendored_frameworks = ['NimbusRenderOMKit.xcframework', 'OMSDK_Adsbynimbus.xcframework']
+      ss.dependency 'NimbusSDK/NimbusRenderKit'
+    end
+
     spec.subspec 'NimbusRenderStaticKit' do |ss|
       ss.vendored_frameworks = 'NimbusRenderStaticKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusRenderKit'
@@ -78,6 +83,9 @@ Pod::Spec.new do |spec|
       ss.source_files = 'NimbusFAN/NimbusRenderFANKit/**/*'
       ss.dependency 'NimbusSDK/NimbusRenderKit'
       ss.dependency 'FBAudienceNetwork', '>=6.6.0'
+      ss.xcconfig = { "FRAMEWORK_SEARCH_PATHS": "${PODS_ROOT}/FBAudienceNetwork/**" }
+      ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+      ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     end
 
     spec.subspec 'NimbusKit' do |ss|
