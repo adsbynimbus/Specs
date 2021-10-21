@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
 
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  
+
     spec.name         = 'NimbusSDK'
-    spec.version      = '1.11.0'
+    spec.version      = '1.11.0-beta'
     spec.summary      = 'The Nimbus SDK is the easiest and fastest way to start using Nimbus on iOS.'
     spec.description  = <<-DESC
                       Nimbus is a disruptive new mobile ad platform that combines an ultra low-latency server-to-server publisher
@@ -21,27 +21,27 @@ Pod::Spec.new do |spec|
     spec.swift_version         = '5.0'
     spec.ios.deployment_target = '10.0'
     spec.static_framework = true
-  
+
     # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  
+
     spec.source = {
-      :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/Nimbus-1.11.0.zip',
-      :sha256 => '4c5a65b3210bc928a8f4ce7eb1090a784a5c2588fee3e2806874d07591a18ebf'
+      :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/Nimbus-1.11.0-beta.zip',
+      :sha256 => 'b097e72a096bddf59a9c55c3f27e22b615c99a68d9f76a4f009f3bd7d87e391c'
     }
-  
+
     # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  
+
     spec.default_subspecs = 'NimbusKit'
-  
+
     spec.subspec 'NimbusCoreKit' do |ss|
       ss.vendored_frameworks = 'NimbusCoreKit.xcframework'
     end
-  
+
     spec.subspec 'NimbusRequestKit' do |ss|
       ss.vendored_frameworks = 'NimbusRequestKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusCoreKit'
     end
-  
+
     spec.subspec 'NimbusRequestAPSKit' do |ss|
       ss.vendored_frameworks = 'NimbusRequestAPSKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusRequestKit'
@@ -49,30 +49,23 @@ Pod::Spec.new do |spec|
       ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
       ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     end
-  
+
     spec.subspec 'NimbusRequestFANKit' do |ss|
       ss.source_files = 'NimbusFAN/NimbusRequestFANKit/**/*'
       ss.dependency 'NimbusSDK/NimbusRequestKit'
       ss.dependency 'FBAudienceNetwork', '6.6.0'
-      ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-      ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     end
-  
+
     spec.subspec 'NimbusRenderKit' do |ss|
       ss.vendored_frameworks = 'NimbusRenderKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusCoreKit'
-    end
-  
-    spec.subspec 'NimbusRenderOMKit' do |ss|
-      ss.vendored_frameworks = ['NimbusRenderOMKit.xcframework', 'OMSDK_Adsbynimbus.xcframework']
-      ss.dependency 'NimbusSDK/NimbusRenderKit'
     end
 
     spec.subspec 'NimbusRenderStaticKit' do |ss|
       ss.vendored_frameworks = 'NimbusRenderStaticKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusRenderKit'
     end
-  
+
     spec.subspec 'NimbusRenderVideoKit' do |ss|
       ss.vendored_frameworks = 'NimbusRenderVideoKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusRenderKit'
@@ -80,34 +73,31 @@ Pod::Spec.new do |spec|
       ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
       ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     end
-  
+
     spec.subspec 'NimbusRenderFANKit' do |ss|
       ss.source_files = 'NimbusFAN/NimbusRenderFANKit/**/*'
       ss.dependency 'NimbusSDK/NimbusRenderKit'
-      ss.dependency 'FBAudienceNetwork', '6.6.0'
-      ss.xcconfig = { "FRAMEWORK_SEARCH_PATHS": "${PODS_ROOT}/FBAudienceNetwork/**" }
-      ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-      ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+      ss.dependency 'FBAudienceNetwork', '>=6.6.0'
     end
-  
+
     spec.subspec 'NimbusKit' do |ss|
       ss.vendored_frameworks = 'NimbusKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusRequestKit'
       ss.dependency 'NimbusSDK/NimbusRenderKit'
     end
-  
+
     spec.subspec 'NimbusGAMKit' do |ss|
       ss.source_files   = 'NimbusGAM/NimbusGAMKit/**/*'
       ss.dependency 'NimbusSDK/NimbusKit'
-      ss.dependency 'Google-Mobile-Ads-SDK', '8.3.0'
+      ss.dependency 'Google-Mobile-Ads-SDK', '>=8.9.0'
       ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
       ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
     end
-  
+
     spec.subspec 'NimbusMopubKit' do |ss|
       ss.source_files = 'NimbusMopub/NimbusMopubKit/**/*'
       ss.dependency 'NimbusSDK/NimbusKit'
-      ss.dependency 'mopub-ios-sdk', '5.17.0'
+      ss.dependency 'mopub-ios-sdk', '>=5.17.0'
     end
-  
+
   end
