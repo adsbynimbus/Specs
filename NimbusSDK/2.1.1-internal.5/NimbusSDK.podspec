@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
 
     spec.source = {
       :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/sdks/2.1.1-internal.5/Nimbus-2.1.1-internal.5.zip',
-      :sha256 => '1d0d8dc36bb4d0e36d89286ea17562f36eca798f1303548bd8645951dfd0ee1c'
+      :sha256 => 'fc70cc701e17b8e021d8386ae7e194a2dde6adae65a62a594e2f860225d15c8b'
     }
 
     # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -107,7 +107,7 @@ Pod::Spec.new do |spec|
       ss.dependency 'LRAtsSDK', '>=1.3.1'
     end
 
-    spec.subspec 'NimbusRequestVungleKit' do |ss|
+    spec.subspec 'NimbusVungleKit' do |ss|
       ss.vendored_frameworks = 'NimbusVungleKit.xcframework'
       ss.dependency 'NimbusSDK/NimbusKit'
       ss.dependency 'VungleSDK-iOS', '>=6.12.0'
