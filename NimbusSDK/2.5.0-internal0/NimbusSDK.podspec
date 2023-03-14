@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
 
     spec.source = {
       :http => 'https://adsbynimbus-public.s3.amazonaws.com/dev/iOS/sdks/2.5.0-internal0/Nimbus-2.5.0-internal0.zip',
-      :sha256 => '87192675f15aa6a4fea4a2bfc12e010e40c8c88d8b5390fbcd5f9548461ed52e'
+      :sha256 => 'ba92ee4b87f4cd9a9b4e919012724965105850d29099648d7163e42c75984c68'
     }
 
     # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
